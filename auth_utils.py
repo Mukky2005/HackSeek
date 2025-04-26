@@ -242,7 +242,7 @@ def get_user_profile(user_id):
     
     try:
         cur.execute(
-            "SELECT id, username, email, date_of_birth, gender, profile_pic_url, theme FROM users WHERE id = %s",
+            "SELECT id, username, email, date_of_birth, gender, profile_picture, theme FROM users WHERE id = %s",
             (user_id,)
         )
         user_profile = cur.fetchone()
@@ -266,7 +266,7 @@ def update_user_profile(user_id, profile_data):
         bool: True if update was successful, False otherwise
     """
     # Fields allowed to be updated
-    allowed_fields = ['email', 'date_of_birth', 'gender', 'profile_pic_url', 'theme']
+    allowed_fields = ['email', 'date_of_birth', 'gender', 'profile_picture', 'theme']
     
     # Filter out only allowed fields
     update_fields = {k: v for k, v in profile_data.items() if k in allowed_fields}

@@ -259,8 +259,8 @@ def save_profile_changes():
     if 'profile_gender' in st.session_state and st.session_state.profile_gender:
         profile_data['gender'] = st.session_state.profile_gender
     
-    if 'profile_pic_url' in st.session_state and st.session_state.profile_pic_url:
-        profile_data['profile_pic_url'] = st.session_state.profile_pic_url
+    if 'profile_picture' in st.session_state and st.session_state.profile_picture:
+        profile_data['profile_picture'] = st.session_state.profile_picture
     
     if profile_data:
         success, message = update_user_profile(st.session_state.user_info['id'], profile_data)
@@ -368,7 +368,7 @@ def render_user_icon():
         
         with icon_col:
             # Get profile pic URL if available, otherwise use a default avatar emoji
-            profile_pic = st.session_state.user_info.get('profile_pic_url') if st.session_state.user_info else None
+            profile_pic = st.session_state.user_info.get('profile_picture') if st.session_state.user_info else None
             
             if profile_pic:
                 st.image(profile_pic, width=40)
@@ -458,10 +458,10 @@ def render_profile_modal():
                     encoded_image = base64.b64encode(uploaded_image.getvalue()).decode()
                     # Create data URL
                     file_type = uploaded_image.type
-                    st.session_state.profile_pic_url = f"data:{file_type};base64,{encoded_image}"
-                elif st.session_state.user_info.get('profile_pic_url', ''):
+                    st.session_state.profile_picture = f"data:{file_type};base64,{encoded_image}"
+                elif st.session_state.user_info.get('profile_picture', ''):
                     # Display the current profile picture if available
-                    st.image(st.session_state.user_info.get('profile_pic_url', ''), width=150)
+                    st.image(st.session_state.user_info.get('profile_picture', ''), width=150)
                     st.write("To keep the current image, don't upload a new one.")
                 
                 st.form_submit_button("Save Changes", on_click=save_profile_changes)
