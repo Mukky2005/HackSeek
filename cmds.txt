@@ -1,0 +1,4 @@
+venv\Scripts\activate
+
+streamlit run app.py --server.port 8502 --server.address localhost
+

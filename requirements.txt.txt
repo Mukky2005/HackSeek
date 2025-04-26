@@ -1,0 +1,13 @@
+anthropic
+matplotlib
+openai
+pandas
+passlib
+plotly
+psycopg2-binary
+requests
+spacy
+streamlit
+streamlit-extras
+textblob
+twilio
