@@ -2,8 +2,9 @@
 name = "hackseek"
 version = "0.1.0"
 description = "Add your description here"
-requires-python = ">=3.11"
+python = ">=3.9,<3.13"
 dependencies = [
+    
     "matplotlib>=3.10.1",
     "pandas>=2.2.3",
     "passlib>=1.7.4",
