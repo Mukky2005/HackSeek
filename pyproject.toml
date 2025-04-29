@@ -2,7 +2,7 @@
 name = "hackseek"
 version = "0.1.0"
 description = "Add your description here"
-python = ">=3.9,<3.13"
+python = ">=3.8,<3.13"
 dependencies = [
     
     "matplotlib>=3.10.1",
