@@ -3,6 +3,8 @@ from auth_utils import register_user, authenticate_user, get_user_search_history
 from auth_utils import get_user_profile, update_user_profile, update_user_password, reset_user_password, delete_user_account
 from datetime import datetime
 
+
+
 def initialize_auth_state():
     """Initialize authentication state variables in session state"""
     if 'is_authenticated' not in st.session_state:

@@ -4,6 +4,8 @@ from psycopg2.extras import RealDictCursor
 from passlib.hash import pbkdf2_sha256
 import json
 import os
+import psycopg2
+
 
 
 # Load environment variables from .env file

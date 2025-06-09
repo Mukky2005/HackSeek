@@ -5,9 +5,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 import json
 import os
-from dotenv import load_dotenv  # Make sure it's "dotenv" not just "dot"
-# Load environment variables from .env file
+from dotenv import load_dotenv  
 load_dotenv()
+import psycopg2
 from problem_analyzer import analyze_problem
 from insights_generator import generate_insights
 from innovation_spotter import generate_innovations
@@ -27,6 +27,8 @@ from hackathon_tips import (get_hackathon_planning_tips, get_technical_execution
 
 # Import AI Enhancement modules
 from ai_enhancement import render_ai_enhancement_tab
+
+
 
 # Set page configuration
 st.set_page_config(
